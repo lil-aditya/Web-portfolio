@@ -717,8 +717,6 @@ ul, ol { list-style: none; }
   align-items: flex-end;
 }
 
-.footer-left {}
-
 .footer-heading {
   font-family: var(--serif);
   font-size: clamp(1.4rem, 2.5vw, 2rem);
