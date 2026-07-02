@@ -91,7 +91,7 @@ ul, ol { list-style: none; }
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 1.6rem var(--page-pad);
+  padding: 2rem var(--page-pad);
   display: flex;
   justify-content: space-between;
   align-items: center;
