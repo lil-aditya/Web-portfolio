@@ -9,297 +9,440 @@
     content="Portfolio of Aditya Gaurav — B.Tech in AI & Data Science at IIT Jodhpur. Research, projects, and work in deep learning, computer vision, and distributed systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Rajdhani:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ── Navigation ── -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">Aditya Gaurav</a>
-    <div class="nav-links" id="navLinks">
-      <a href="#works">Works</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="https://drive.google.com/file/d/1WF0N-OpDBsZiETJXqK8vDj7sZ1ZNq0tl/view?usp=sharing" target="_blank" rel="noopener">Résumé ↗</a>
+  <!-- ── Status Bar / Navigation ── -->
+  <nav class="status-bar" id="statusBar">
+    <div class="sb-left">
+      <span class="sb-logo">AG</span>
+      <span class="sb-divider">portfolio</span>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
+    <div class="sb-nav" id="sbNav">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#contact">Contact</a>
+      <a href="https://drive.google.com/file/d/1WF0N-OpDBsZiETJXqK8vDj7sZ1ZNq0tl/view?usp=sharing" target="_blank"
+        rel="noopener">Résumé ↗</a>
+    </div>
+    <div class="sb-right">
+      <span class="sb-status">STATUS: <span class="status-online">ONLINE</span></span>
+      <span class="sb-clock" id="clock">00:00:00</span>
+    </div>
+    <button class="sb-toggle" id="sbToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
 
   <!-- ── Hero ── -->
   <header class="hero" id="hero">
-    <div class="hero-grid">
-      <div class="hero-meta">
-        <p class="mono-sm">B.Tech AI & Data Science</p>
-        <p class="mono-sm">IIT Jodhpur, Rajasthan</p>
-        <p class="mono-sm">2024 — Present</p>
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <p class="module-label">SYS.00 — CORE<span class="module-dot"></span></p>
+      <h1 class="hero-name">ADITYA<br><span class="hero-name-accent">GAURAV</span></h1>
+      <div class="hero-role">
+        <span id="typewriter"></span><span class="tw-cursor">|</span>
       </div>
-      <div class="hero-statement">
-        <h1 class="hero-title">Engineer &<br>researcher building<br>systems that hold<br>under pressure.</h1>
+      <p class="hero-bio">B.Tech AI & Data Science at IIT Jodhpur. I work on deep learning,
+        distributed systems, and computer vision. Currently researching at
+        Nazarbayev University and McGill University.</p>
+      <div class="hero-cta">
+        <a href="https://www.linkedin.com/in/aditya-gaurav-a59b25328/" target="_blank" rel="noopener"
+          class="cta-btn">$ open linkedin</a>
+        <a href="https://github.com/lil-aditya" target="_blank" rel="noopener" class="cta-btn">$ open github</a>
+        <a href="mailto:b24cm1003@iitj.ac.in" class="cta-btn">$ open email</a>
       </div>
-      <div class="hero-sub">
-        <p>Deep learning, distributed systems, and the discipline of making hard things simple. Currently researching at Nazarbayev University and McGill University.</p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-value">2</span>
+          <span class="stat-label">Research<br>Positions</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">5</span>
+          <span class="stat-label">Projects<br>Shipped</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">3</span>
+          <span class="stat-label">Open Source<br>PRs Merged</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">8.01</span>
+          <span class="stat-label">CGPA<br>IIT Jodhpur</span>
+        </div>
       </div>
+      <p class="scroll-hint">↓ scroll to explore</p>
     </div>
-    <div class="hero-rule"></div>
   </header>
 
 
-  <!-- ── Selected Works ── -->
-  <section class="section" id="works">
-    <div class="section-header">
-      <h2 class="section-title">Selected Works</h2>
-      <span class="mono-sm">04 Projects</span>
-    </div>
+  <!-- ── Experience ── -->
+  <section class="section" id="experience">
+    <p class="module-label">SYS.01 — EXPERIENCE</p>
+    <h2 class="section-title">Research & Work</h2>
+    <p class="section-sub">> 2 active positions</p>
 
-    <!-- Column headers -->
-    <div class="works-table-head">
-      <span class="wt-col-idx">#</span>
-      <span class="wt-col-name">Project</span>
-      <span class="wt-col-year">Year</span>
-      <span class="wt-col-stack">Stack</span>
-      <span class="wt-col-link"></span>
-    </div>
+    <div class="timeline">
 
-    <!-- Project 01 -->
-    <article class="work-row reveal" id="work-01">
-      <span class="wt-col-idx mono-sm">01</span>
-      <div class="wt-col-name">
-        <h3 class="work-name">EEG Mind‑to‑Text</h3>
-        <p class="work-sub">P300 Speller Decoding via Deep Learning</p>
-        <ul class="work-details">
-          <li>Built a P300 EEG mind-to-text decoding pipeline benchmarking three classifiers—LDA, SVM, EEGNet—on multi-subject BCI datasets.</li>
-          <li>Achieved 0.807 avg ROC-AUC and 71.9% balanced accuracy with EEGNet, outperforming the strongest classical baseline across cross-subject evaluation.</li>
-          <li>Improved letter decoding accuracy from 83.1% to 90.0%, demonstrating robust cross-subject generalization with peak individual ROC-AUC of 0.897.</li>
-        </ul>
-      </div>
-      <span class="wt-col-year mono-sm">2026</span>
-      <div class="wt-col-stack">
-        <span class="tag">Python</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">EEGNet</span>
-        <span class="tag">NumPy</span>
-      </div>
-      <a class="wt-col-link" href="https://github.com/lil-aditya/mind-to-text" target="_blank" rel="noopener">View ↗</a>
-    </article>
-
-    <!-- Project 02 -->
-    <article class="work-row reveal" id="work-02">
-      <span class="wt-col-idx mono-sm">02</span>
-      <div class="wt-col-name">
-        <h3 class="work-name">Volt</h3>
-        <p class="work-sub">Cloud Storage Platform — Microservices Architecture</p>
-        <ul class="work-details">
-          <li>Architected a production-grade microservices cloud storage platform with independent auth, file, and gateway services communicating via shared PostgreSQL, supporting 1,000+ concurrent operations.</li>
-          <li>Enforced data integrity with SHA-256 deduplication eliminating 100% of redundant storage; secured with JWT auth and bcrypt encryption.</li>
-          <li>Deployed NGINX gateway with intelligent routing, load balancing, and rate limiting; containerized with Docker and Kubernetes for horizontal scaling.</li>
-        </ul>
-      </div>
-      <span class="wt-col-year mono-sm">2026</span>
-      <div class="wt-col-stack">
-        <span class="tag">Go</span>
-        <span class="tag">React 19</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Kubernetes</span>
-      </div>
-      <a class="wt-col-link" href="https://github.com/lil-aditya/SysStore" target="_blank" rel="noopener">View ↗</a>
-    </article>
-
-    <!-- Project 03 -->
-    <article class="work-row reveal" id="work-03">
-      <span class="wt-col-idx mono-sm">03</span>
-      <div class="wt-col-name">
-        <h3 class="work-name">CERP</h3>
-        <p class="work-sub">Campus Engagement & Research Portal</p>
-        <ul class="work-details">
-          <li>Architected a full-stack portal with 3-tier RBAC, JWT auth, and a PII-redaction engine combining regex and NER to anonymize data before local LLM digest generation.</li>
-          <li>Implemented an NLP pipeline—TF-IDF, cosine similarity, Porter stemming, 384-dim embeddings—for semantic search and personalized ranking with OpenAlex API integration.</li>
-        </ul>
-      </div>
-      <span class="wt-col-year mono-sm">2026</span>
-      <div class="wt-col-stack">
-        <span class="tag">React</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">Express</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">NLP</span>
-        <span class="tag">Docker</span>
-      </div>
-      <a class="wt-col-link" href="https://github.com/lil-aditya/cerp" target="_blank" rel="noopener">View ↗</a>
-    </article>
-
-    <!-- Project 04 -->
-    <article class="work-row reveal" id="work-04">
-      <span class="wt-col-idx mono-sm">04</span>
-      <div class="wt-col-name">
-        <h3 class="work-name">ADIPE</h3>
-        <p class="work-sub">Algorithmic Data Integrity & Prioritization Engine</p>
-        <ul class="work-details">
-          <li>Designed a 6-node distributed simulation with RSA-signed routing and trust-aware Dijkstra; applied credibility-weighted ML aggregation with outlier trimming to autonomously quarantine Byzantine peers.</li>
-          <li>Integrated four chaos fault-injection modes with adaptive trust recovery; deployed a live React dashboard visualizing topology and trust across 20+ source files.</li>
-        </ul>
-      </div>
-      <span class="wt-col-year mono-sm">2025</span>
-      <div class="wt-col-stack">
-        <span class="tag">C++17</span>
-        <span class="tag">React</span>
-        <span class="tag">RSA Cryptography</span>
-        <span class="tag">Dijkstra</span>
-        <span class="tag">Trust-Based ML</span>
-      </div>
-      <a class="wt-col-link" href="https://github.com/lil-aditya/Algorithms-and-Data-Structures" target="_blank" rel="noopener">View ↗</a>
-    </article>
-
-  </section>
-
-
-  <!-- ── About ── -->
-  <section class="section section--bordered" id="about">
-    <div class="section-header">
-      <h2 class="section-title">About</h2>
-      <span class="mono-sm">Background & Skills</span>
-    </div>
-
-    <div class="about-grid">
-
-      <!-- Left: Bio -->
-      <div class="about-bio">
-        <p class="about-lead">I'm an undergraduate researcher and engineer at IIT Jodhpur studying Artificial Intelligence and Data Science. I believe the hardest technical problems dissolve when you teach them clearly enough.</p>
-        <p>My work spans deep learning, computer vision, and distributed systems. I decompose complex systems into communicable ideas—whether it's explaining how a convolutional kernel detects edges or why a microservice needs its own failure domain.</p>
-        <p>Currently researching thermodynamic irreversibility operators for deepfake detection at Nazarbayev University, and validating cloud experimentation platforms at McGill University.</p>
-      </div>
-
-      <!-- Right: Structured data -->
-      <div class="about-data">
-
-        <div class="data-block">
-          <h3 class="data-label">Education</h3>
-          <div class="data-content">
-            <p class="data-primary">Indian Institute of Technology, Jodhpur</p>
-            <p>B.Tech. in Artificial Intelligence and Data Science (CSE)</p>
-            <div class="data-row">
-              <span class="mono-sm">CGPA 8.01</span>
-              <span class="mono-sm">Aug 2024 — Present</span>
+      <div class="tl-entry reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <h3 class="tl-company">Nazarbayev University</h3>
+              <span class="tl-role">Undergraduate Researcher</span>
             </div>
+            <span class="tl-date">May 2026 — Present</span>
           </div>
-        </div>
-
-        <div class="data-block">
-          <h3 class="data-label">Research — Nazarbayev University</h3>
-          <div class="data-content">
-            <p class="data-primary">Undergraduate Researcher</p>
-            <p class="mono-sm">Kazakhstan (Remote) · Supervised by Prof. H. M. Rai · May 2026 — Present</p>
-            <ul class="data-list">
-              <li>Developing a novel local irreversibility operator as a convolution alternative to detect high-frequency visual anomalies—deepfakes, presentation attacks, micro-texture splices—by quantifying local physical inconsistency across image fields.</li>
-              <li>Formulated a constrained anisotropic diffusion-based anomaly scoring framework achieving 0.90 pixel-level AUC, outperforming Laplacian and high-pass baselines.</li>
-              <li>Automated 4 synthetic benchmarking pipelines with 20-seed statistical evaluation per scenario, totaling 80 test runs.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="data-block">
-          <h3 class="data-label">Research — McGill University</h3>
-          <div class="data-content">
-            <p class="data-primary">Undergraduate Researcher</p>
-            <p class="mono-sm">Canada (Remote) · Supervised by Prof. M. Maheswaran · May 2026 — Present</p>
-            <ul class="data-list">
-              <li>Analyzing the Anglish programming language specification for ambiguities and edge cases; authored targeted test programs and filed bug reports to refine language semantics.</li>
-              <li>Validated the GINI (gBuilder) cloud experimentation platform by designing networking experiments and proposing actionable improvements to orchestration workflows.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="data-block">
-          <h3 class="data-label">Achievements</h3>
-          <div class="data-content">
-            <ul class="data-list">
-              <li>Ranked in the Top 0.61% in JEE Main and Top 0.57% in JEE Advanced among over 1.2 million candidates nationwide.</li>
-              <li>Open Source Contributor: Merged 3 pull requests into the Google Summer of Code organization UNOICT, contributing to production-grade open-source software.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Skills Grid -->
-    <div class="skills-section">
-      <h3 class="data-label">Technical Proficiency</h3>
-      <div class="skills-grid">
-        <div class="skill-col">
-          <h4 class="skill-heading">Languages</h4>
-          <ul class="skill-list">
-            <li>Python</li>
-            <li>C / C++17</li>
-            <li>Go</li>
-            <li>JavaScript / TypeScript</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h4 class="skill-heading">ML / AI</h4>
-          <ul class="skill-list">
-            <li>PyTorch</li>
-            <li>scikit-learn</li>
-            <li>NumPy / Pandas</li>
-            <li>EEGNet</li>
-            <li>NLP Pipelines</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h4 class="skill-heading">Systems</h4>
-          <ul class="skill-list">
-            <li>Docker / Kubernetes</li>
-            <li>PostgreSQL / SQLite</li>
-            <li>NGINX</li>
-            <li>Microservices</li>
-            <li>RSA / JWT / bcrypt</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h4 class="skill-heading">Frontend</h4>
-          <ul class="skill-list">
-            <li>React 19</li>
-            <li>Node.js / Express</li>
-            <li>HTML / CSS</li>
-            <li>REST APIs</li>
-            <li>Git / CI-CD</li>
+          <p class="tl-meta">Kazakhstan (Remote) · Supervised by Prof. H. M. Rai</p>
+          <ul class="tl-list">
+            <li>Developing a local irreversibility operator as a convolution alternative for detecting deepfakes,
+              presentation attacks, and micro-texture splices by quantifying local physical inconsistency across image
+              fields.</li>
+            <li>Built an anisotropic diffusion-based anomaly scoring framework — 0.90 pixel-level AUC, outperforming
+              Laplacian and high-pass baselines.</li>
+            <li>Automated 4 synthetic benchmarking pipelines with 20-seed statistical evaluation per scenario, totaling
+              80 test runs.</li>
           </ul>
         </div>
       </div>
-    </div>
 
+      <div class="tl-entry reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <h3 class="tl-company">McGill University</h3>
+              <span class="tl-role">Undergraduate Researcher</span>
+            </div>
+            <span class="tl-date">May 2026 — Present</span>
+          </div>
+          <p class="tl-meta">Canada (Remote) · Supervised by Prof. M. Maheswaran</p>
+          <ul class="tl-list">
+            <li>Analyzing the Anglish programming language specification for ambiguities and edge cases; authored
+              targeted test programs and filed bug reports to refine language semantics.</li>
+            <li>Validated the GINI (gBuilder) cloud experimentation platform by designing networking experiments and
+              proposing improvements to orchestration workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </section>
 
 
-  <!-- ── Footer / Contact ── -->
-  <footer class="footer" id="contact">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <p class="mono-sm">Contact</p>
-        <div class="footer-links">
-          <a href="mailto:b24cm1003@iitj.ac.in">b24cm1003@iitj.ac.in</a>
-          <a href="https://github.com/lil-aditya" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/aditya-gaurav-a59b25328/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="https://drive.google.com/file/d/1WF0N-OpDBsZiETJXqK8vDj7sZ1ZNq0tl/view?usp=sharing" target="_blank" rel="noopener">Résumé ↗</a>
+  <!-- ── Projects ── -->
+  <section class="section" id="projects">
+    <p class="module-label">SYS.02 — PROJECTS</p>
+    <h2 class="section-title">Built & Shipped</h2>
+    <p class="section-sub">> 5 projects // 2 research</p>
+
+    <div class="projects-grid">
+
+      <!-- Lumos -->
+      <article class="project-card reveal" id="proj-lumos">
+        <div class="pc-header">
+          <h3 class="pc-name">Lumos</h3>
+          <span class="badge badge--active">ACTIVE</span>
+        </div>
+        <canvas class="pc-viz" data-viz="embedding" width="280" height="50"></canvas>
+        <p class="pc-desc">Multimodal semantic search — 8K images, 40K captions. OpenCLIP + Qdrant cosine retrieval.
+          Recall@10 = 0.631 on Flickr8k.</p>
+        <div class="pc-tags">
+          <span class="tag">Python</span>
+          <span class="tag">OpenCLIP</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Qdrant</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Docker</span>
+        </div>
+        <div class="pc-details" id="details-lumos">
+          <ul>
+            <li>Multimodal semantic search system (8K images, 40K captions) using OpenCLIP ViT-B/32 embeddings and
+              Qdrant cosine retrieval — Recall@10 = 0.631, MRR@10 = 0.397 on Flickr8k.</li>
+            <li>Built a modular IR evaluation harness (Recall@K, MRR@K, nDCG@K, deterministic splits); profiled
+              end-to-end latency (p50 = 33ms, p95 = 48ms) across encode/search stages.</li>
+            <li>Deployed a 3-service containerized stack (Qdrant, FastAPI, Streamlit) via Docker Compose with REST
+              endpoints for text→image and image→image search; supports fp16 GPU inference.</li>
+          </ul>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/lil-aditya/Lumos" target="_blank" rel="noopener" class="pc-link">$ git clone
+            ↗</a>
+          <button class="pc-expand" data-target="details-lumos">expand ▼</button>
+        </div>
+      </article>
+
+      <!-- EEG Mind-to-Text -->
+      <article class="project-card reveal" id="proj-eeg">
+        <div class="pc-header">
+          <h3 class="pc-name">EEG Mind‑to‑Text</h3>
+          <span class="badge badge--research">RESEARCH</span>
+        </div>
+        <canvas class="pc-viz" data-viz="waveform" width="280" height="50"></canvas>
+        <p class="pc-desc">P300 EEG decoding pipeline. Three classifiers benchmarked — EEGNet hit 0.807 avg ROC-AUC and
+          90% letter accuracy.</p>
+        <div class="pc-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">EEGNet</span>
+          <span class="tag">NumPy</span>
+        </div>
+        <div class="pc-details" id="details-eeg">
+          <ul>
+            <li>Built a P300 EEG mind-to-text decoding pipeline benchmarking three classifiers — LDA, SVM, EEGNet — on
+              multi-subject BCI datasets.</li>
+            <li>Achieved 0.807 avg ROC-AUC and 71.9% balanced accuracy with EEGNet, outperforming the strongest
+              classical baseline across cross-subject evaluation.</li>
+            <li>Improved letter decoding accuracy from 83.1% to 90.0% with peak individual ROC-AUC of 0.897.</li>
+          </ul>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/lil-aditya/mind-to-text" target="_blank" rel="noopener" class="pc-link">$ git
+            clone ↗</a>
+          <button class="pc-expand" data-target="details-eeg">expand ▼</button>
+        </div>
+      </article>
+
+      <!-- Volt -->
+      <article class="project-card reveal" id="proj-volt">
+        <div class="pc-header">
+          <h3 class="pc-name">Volt</h3>
+          <span class="badge badge--deployed">DEPLOYED</span>
+        </div>
+        <canvas class="pc-viz" data-viz="bars" width="280" height="50"></canvas>
+        <p class="pc-desc">Microservices cloud storage. Go + React + PostgreSQL. SHA-256 dedup, JWT auth, NGINX
+          gateway, Kubernetes.</p>
+        <div class="pc-tags">
+          <span class="tag">Go</span>
+          <span class="tag">React 19</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span>
+        </div>
+        <div class="pc-details" id="details-volt">
+          <ul>
+            <li>Architected a production-grade microservices cloud storage platform with independent auth, file, and
+              gateway services communicating via shared PostgreSQL, supporting 1,000+ concurrent operations.</li>
+            <li>SHA-256 deduplication eliminating 100% of redundant storage; secured with JWT auth and bcrypt
+              encryption.</li>
+            <li>NGINX gateway with intelligent routing, load balancing, and rate limiting; containerized with Docker and
+              Kubernetes for horizontal scaling.</li>
+          </ul>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/lil-aditya/SysStore" target="_blank" rel="noopener" class="pc-link">$ git clone
+            ↗</a>
+          <button class="pc-expand" data-target="details-volt">expand ▼</button>
+        </div>
+      </article>
+
+      <!-- CERP -->
+      <article class="project-card reveal" id="proj-cerp">
+        <div class="pc-header">
+          <h3 class="pc-name">CERP</h3>
+          <span class="badge badge--deployed">DEPLOYED</span>
+        </div>
+        <canvas class="pc-viz" data-viz="nodes" width="280" height="50"></canvas>
+        <p class="pc-desc">Full-stack campus portal with NLP search, 3-tier RBAC, PII redaction, and local LLM
+          integration.</p>
+        <div class="pc-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Docker</span>
+        </div>
+        <div class="pc-details" id="details-cerp">
+          <ul>
+            <li>Architected a full-stack portal with 3-tier RBAC, JWT auth, and a PII-redaction engine combining regex
+              and NER to anonymize data before local LLM digest generation.</li>
+            <li>Implemented an NLP pipeline — TF-IDF, cosine similarity, Porter stemming, 384-dim embeddings — for
+              semantic search and personalized ranking with OpenAlex API integration.</li>
+          </ul>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/lil-aditya/cerp" target="_blank" rel="noopener" class="pc-link">$ git clone
+            ↗</a>
+          <button class="pc-expand" data-target="details-cerp">expand ▼</button>
+        </div>
+      </article>
+
+      <!-- ADIPE -->
+      <article class="project-card reveal" id="proj-adipe">
+        <div class="pc-header">
+          <h3 class="pc-name">ADIPE</h3>
+          <span class="badge badge--research">RESEARCH</span>
+        </div>
+        <canvas class="pc-viz" data-viz="network" width="280" height="50"></canvas>
+        <p class="pc-desc">6-node distributed simulation. RSA-signed routing, trust-aware Dijkstra, Byzantine fault
+          detection with live React dashboard.</p>
+        <div class="pc-tags">
+          <span class="tag">C++17</span>
+          <span class="tag">React</span>
+          <span class="tag">RSA</span>
+          <span class="tag">Dijkstra</span>
+          <span class="tag">Trust ML</span>
+        </div>
+        <div class="pc-details" id="details-adipe">
+          <ul>
+            <li>Designed a 6-node distributed simulation with RSA-signed routing and trust-aware Dijkstra; applied
+              credibility-weighted ML aggregation with outlier trimming to autonomously quarantine Byzantine peers.</li>
+            <li>Integrated four chaos fault-injection modes with adaptive trust recovery; deployed a live React
+              dashboard visualizing topology and trust across 20+ source files.</li>
+          </ul>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/lil-aditya/Algorithms-and-Data-Structures" target="_blank" rel="noopener"
+            class="pc-link">$ git clone ↗</a>
+          <button class="pc-expand" data-target="details-adipe">expand ▼</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ── Milestones ── -->
+  <section class="section" id="milestones">
+    <p class="module-label">SYS.03 — MILESTONES</p>
+    <h2 class="section-title">Signal Log</h2>
+    <p class="section-sub">Worth keeping track of.</p>
+
+    <div class="milestones-grid">
+
+      <div class="ms-card reveal">
+        <div class="ms-icon">🎓</div>
+        <div>
+          <span class="ms-highlight">IIT Jodhpur</span>
+          <p class="ms-title">B.Tech AI & Data Science</p>
+          <p class="ms-sub">CGPA 8.01 · Aug 2024 — Present</p>
         </div>
       </div>
-      <div class="footer-col footer-col--right">
-        <p class="mono-sm">Location</p>
-        <p>IIT Jodhpur, Rajasthan</p>
+
+      <div class="ms-card reveal">
+        <div class="ms-icon">📊</div>
+        <div>
+          <span class="ms-highlight">Top 0.61%</span>
+          <p class="ms-title">JEE Main 2024</p>
+          <p class="ms-sub">Among 1.2 million candidates nationwide.</p>
+        </div>
       </div>
-      <div class="footer-col footer-col--right">
-        <p class="mono-sm">© 2026</p>
-        <p>Aditya Gaurav</p>
+
+      <div class="ms-card reveal">
+        <div class="ms-icon">📈</div>
+        <div>
+          <span class="ms-highlight">Top 0.57%</span>
+          <p class="ms-title">JEE Advanced 2024</p>
+          <p class="ms-sub">Among 1.2 million candidates nationwide.</p>
+        </div>
       </div>
+
+      <div class="ms-card reveal">
+        <div class="ms-icon">🔓</div>
+        <div>
+          <span class="ms-highlight">3 PRs Merged</span>
+          <p class="ms-title">Google Summer of Code — UNOICT</p>
+          <p class="ms-sub">Contributed to production-grade open-source software.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── Skills ── -->
+  <section class="section" id="skills">
+    <p class="module-label">SYS.04 — STACK</p>
+    <h2 class="section-title">Technical Proficiency</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3 class="skill-heading">Languages</h3>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">C / C++17</span>
+          <span class="tag">Go</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="skill-heading">ML / AI</h3>
+        <div class="skill-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">OpenCLIP</span>
+          <span class="tag">EEGNet</span>
+          <span class="tag">NLP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="skill-heading">Infrastructure</h3>
+        <div class="skill-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Qdrant</span>
+          <span class="tag">NGINX</span>
+          <span class="tag">FastAPI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="skill-heading">Frontend & Tools</h3>
+        <div class="skill-tags">
+          <span class="tag">React 19</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Git</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Contact / Footer ── -->
+  <footer class="footer" id="contact">
+    <p class="reach-out">> reach out <span class="status-online">●</span></p>
+
+    <div class="contact-grid">
+      <a href="mailto:b24cm1003@iitj.ac.in" class="contact-card">
+        <span class="cc-icon">✉</span>
+        <span class="cc-label">Email</span>
+        <span class="cc-value">b24cm1003@iitj.ac.in</span>
+      </a>
+      <a href="https://github.com/lil-aditya" target="_blank" rel="noopener" class="contact-card">
+        <span class="cc-icon">⌥</span>
+        <span class="cc-label">GitHub</span>
+        <span class="cc-value">github.com/lil-aditya</span>
+      </a>
+      <a href="https://www.linkedin.com/in/aditya-gaurav-a59b25328/" target="_blank" rel="noopener"
+        class="contact-card">
+        <span class="cc-icon">↗</span>
+        <span class="cc-label">LinkedIn</span>
+        <span class="cc-value">linkedin.com/in/aditya-gaurav</span>
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Aditya Gaurav</span>
+      <span>IIT Jodhpur, Rajasthan</span>
     </div>
   </footer>
 
