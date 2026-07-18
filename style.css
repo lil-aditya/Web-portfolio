@@ -273,7 +273,7 @@ body::after {
   z-index: 0;
 }
 
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 1;
   padding-bottom: 2.5rem;
@@ -287,7 +287,7 @@ body::after {
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--fg);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -301,6 +301,23 @@ body::after {
   color: var(--cyan);
   text-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
   text-align: right;
+}
+
+.hero-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.hero-left {
+  /* left column with text content */
+}
+
+.hero-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .hero-role {
@@ -364,7 +381,7 @@ body::after {
   border: 1px solid var(--border);
   background: rgba(15, 25, 35, 0.6);
   padding: 1rem 1.5rem;
-  min-width: 120px;
+  min-width: 110px;
   display: flex;
   flex-direction: column;
   transition: border-color 0.3s;
@@ -408,11 +425,8 @@ body::after {
 /* ── Hero Panel (Project Network) ── */
 
 .hero-panel {
-  position: absolute;
-  top: 80px;
-  right: var(--page-x);
-  width: clamp(320px, 38vw, 500px);
-  z-index: 2;
+  width: 100%;
+  max-width: 480px;
   border: 1px solid var(--border);
   background: rgba(10, 14, 23, 0.6);
   backdrop-filter: blur(6px);

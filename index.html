@@ -44,52 +44,59 @@
   <!-- ── Hero ── -->
   <header class="hero" id="hero">
     <canvas id="heroCanvas"></canvas>
-    <div class="hero-content">
+    <div class="hero-inner">
       <p class="module-label">SYS.00 — CORE<span class="module-dot"></span></p>
       <h1 class="hero-name">
         <span class="hero-name-first">ADITYA</span>
         <span class="hero-name-accent">GAURAV</span>
       </h1>
-      <div class="hero-role">
-        <span id="typewriter"></span><span class="tw-cursor">|</span>
-      </div>
-      <p class="hero-bio">B.Tech AI & Data Science at IIT Jodhpur. I work on deep learning,
-        distributed systems, and computer vision. Currently researching at
-        Nazarbayev University and McGill University.</p>
-      <div class="hero-cta">
-        <a href="https://www.linkedin.com/in/aditya-gaurav-a59b25328/" target="_blank" rel="noopener"
-          class="cta-btn">$ open linkedin</a>
-        <a href="https://github.com/lil-aditya" target="_blank" rel="noopener" class="cta-btn">$ open github</a>
-        <a href="mailto:b24cm1003@iitj.ac.in" class="cta-btn">$ open email</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <span class="stat-value">2</span>
-          <span class="stat-label">Research<br>Positions</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-value">5</span>
-          <span class="stat-label">Projects<br>Shipped</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-value">3</span>
-          <span class="stat-label">Open Source<br>PRs Merged</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-value">8.01</span>
-          <span class="stat-label">CGPA<br>IIT Jodhpur</span>
-        </div>
-      </div>
-      <p class="scroll-hint">↓ scroll to explore</p>
-    </div>
 
-    <!-- Floating network panel -->
-    <div class="hero-panel">
-      <div class="hp-header">
-        <span class="hp-title">PROJECT GRAPH</span>
-        <span class="hp-subtitle">// 5 NODES ACTIVE</span>
+      <div class="hero-columns">
+        <div class="hero-left">
+          <div class="hero-role">
+            <span id="typewriter"></span><span class="tw-cursor">|</span>
+          </div>
+          <p class="hero-bio">B.Tech AI &amp; Data Science at IIT Jodhpur. I work on deep learning,
+            distributed systems, and computer vision. Currently researching at
+            Nazarbayev University and McGill University.</p>
+          <div class="hero-cta">
+            <a href="https://www.linkedin.com/in/aditya-gaurav-a59b25328/" target="_blank" rel="noopener"
+              class="cta-btn">$ open linkedin</a>
+            <a href="https://github.com/lil-aditya" target="_blank" rel="noopener" class="cta-btn">$ open github</a>
+            <a href="mailto:b24cm1003@iitj.ac.in" class="cta-btn">$ open email</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-value">2</span>
+              <span class="stat-label">Research<br>Positions</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">5</span>
+              <span class="stat-label">Projects<br>Shipped</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">3</span>
+              <span class="stat-label">Open Source<br>PRs Merged</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">8.01</span>
+              <span class="stat-label">CGPA<br>IIT Jodhpur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-panel">
+            <div class="hp-header">
+              <span class="hp-title">PROJECT GRAPH</span>
+              <span class="hp-subtitle">// 5 NODES ACTIVE</span>
+            </div>
+            <canvas id="networkCanvas"></canvas>
+          </div>
+        </div>
       </div>
-      <canvas id="networkCanvas"></canvas>
+
+      <p class="scroll-hint">↓ scroll to explore</p>
     </div>
   </header>
 
