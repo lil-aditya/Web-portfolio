@@ -277,7 +277,7 @@ body::after {
   position: relative;
   z-index: 1;
   padding-bottom: 2.5rem;
-  max-width: 680px;
+  width: 100%;
 }
 
 .hero-name {
@@ -288,11 +288,19 @@ body::after {
   letter-spacing: -0.02em;
   color: var(--fg);
   margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-name-first {
+  text-align: left;
 }
 
 .hero-name-accent {
   color: var(--cyan);
   text-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
+  text-align: right;
 }
 
 .hero-role {
@@ -316,7 +324,7 @@ body::after {
 .hero-bio {
   font-size: 0.9rem;
   color: var(--fg-dim);
-  max-width: 500px;
+  max-width: 520px;
   line-height: 1.7;
   margin-bottom: 2rem;
 }
