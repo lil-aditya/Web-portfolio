@@ -405,6 +405,52 @@ body::after {
 }
 
 
+/* ── Hero Panel (Project Network) ── */
+
+.hero-panel {
+  position: absolute;
+  top: 80px;
+  right: var(--page-x);
+  width: clamp(320px, 38vw, 500px);
+  z-index: 2;
+  border: 1px solid var(--border);
+  background: rgba(10, 14, 23, 0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  animation: fadeInPanel 1s ease 0.8s forwards;
+}
+
+@keyframes fadeInPanel {
+  to { opacity: 1; }
+}
+
+.hp-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.hp-title {
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.hp-subtitle {
+  color: var(--fg-mute);
+}
+
+#networkCanvas {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+
 /* ═══════════════════════════════════════════════════════
    Experience Timeline
    ═══════════════════════════════════════════════════════ */
@@ -899,6 +945,8 @@ body::after {
   .sb-right { display: none; }
 
   .sb-toggle { display: flex; }
+
+  .hero-panel { display: none; }
 
   .hero-name {
     font-size: clamp(3rem, 12vw, 5rem);
