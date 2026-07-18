@@ -161,9 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function resizeNetCanvas() {
       const rect = netCanvas.parentElement.getBoundingClientRect();
       netCanvas.width = rect.width * dpr;
-      netCanvas.height = 300 * dpr;
+      netCanvas.height = 380 * dpr;
       netCanvas.style.width = rect.width + 'px';
-      netCanvas.style.height = '300px';
+      netCanvas.style.height = '380px';
       nctx.scale(dpr, dpr);
     }
 
