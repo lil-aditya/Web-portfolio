@@ -140,6 +140,122 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ═══════════════════════════════════════════════════════
+  // Project Network Graph (Hero Panel)
+  // ═══════════════════════════════════════════════════════
+
+  const netCanvas = document.getElementById('networkCanvas');
+  if (netCanvas) {
+    const nctx = netCanvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+
+    const projectNodes = [
+      { label: 'Lumos',     color: '0, 240, 255',   angle: 0,       orbitR: 0.32, speed: 0.15 },
+      { label: 'EEG',       color: '255, 45, 117',  angle: 1.256,   orbitR: 0.35, speed: 0.12 },
+      { label: 'Volt',      color: '0, 255, 136',   angle: 2.513,   orbitR: 0.30, speed: 0.18 },
+      { label: 'CERP',      color: '0, 255, 136',   angle: 3.769,   orbitR: 0.28, speed: 0.14 },
+      { label: 'ADIPE',     color: '255, 45, 117',  angle: 5.026,   orbitR: 0.33, speed: 0.1 },
+    ];
+
+    const netEdges = [[0,1],[0,2],[1,2],[2,3],[3,4],[0,4],[1,3],[0,3]];
+
+    function resizeNetCanvas() {
+      const rect = netCanvas.parentElement.getBoundingClientRect();
+      netCanvas.width = rect.width * dpr;
+      netCanvas.height = 300 * dpr;
+      netCanvas.style.width = rect.width + 'px';
+      netCanvas.style.height = '300px';
+      nctx.scale(dpr, dpr);
+    }
+
+    function drawNetGraph() {
+      const w = netCanvas.width / dpr;
+      const h = netCanvas.height / dpr;
+      nctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      nctx.clearRect(0, 0, w, h);
+
+      const cx = w * 0.5;
+      const cy = h * 0.5;
+      const t = Date.now() * 0.001;
+
+      // Compute positions
+      const positions = projectNodes.map(n => {
+        const a = n.angle + t * n.speed;
+        const rx = w * n.orbitR;
+        const ry = h * n.orbitR;
+        return {
+          x: cx + Math.cos(a) * rx,
+          y: cy + Math.sin(a) * ry,
+          label: n.label,
+          color: n.color,
+        };
+      });
+
+      // Draw edges with animated pulse
+      for (const [a, b] of netEdges) {
+        const pa = positions[a];
+        const pb = positions[b];
+        const pulseAlpha = 0.06 + Math.sin(t * 1.5 + a + b) * 0.04;
+
+        nctx.strokeStyle = `rgba(0, 240, 255, ${pulseAlpha})`;
+        nctx.lineWidth = 0.8;
+        nctx.beginPath();
+        nctx.moveTo(pa.x, pa.y);
+        nctx.lineTo(pb.x, pb.y);
+        nctx.stroke();
+
+        // Traveling dot along edge
+        const progress = (Math.sin(t * 0.8 + a * 2) * 0.5 + 0.5);
+        const dotX = pa.x + (pb.x - pa.x) * progress;
+        const dotY = pa.y + (pb.y - pa.y) * progress;
+        nctx.beginPath();
+        nctx.arc(dotX, dotY, 1.2, 0, Math.PI * 2);
+        nctx.fillStyle = `rgba(0, 240, 255, 0.3)`;
+        nctx.fill();
+      }
+
+      // Draw nodes
+      for (const p of positions) {
+        // Outer glow
+        const grad = nctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 18);
+        grad.addColorStop(0, `rgba(${p.color}, 0.15)`);
+        grad.addColorStop(1, `rgba(${p.color}, 0)`);
+        nctx.beginPath();
+        nctx.arc(p.x, p.y, 18, 0, Math.PI * 2);
+        nctx.fillStyle = grad;
+        nctx.fill();
+
+        // Core dot
+        nctx.beginPath();
+        nctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+        nctx.fillStyle = `rgba(${p.color}, 0.85)`;
+        nctx.fill();
+
+        // Label
+        nctx.font = '500 9px "JetBrains Mono", monospace';
+        nctx.fillStyle = `rgba(${p.color}, 0.7)`;
+        nctx.textAlign = 'center';
+        nctx.fillText(p.label, p.x, p.y - 12);
+      }
+
+      // Center crosshair
+      nctx.strokeStyle = 'rgba(0, 240, 255, 0.06)';
+      nctx.lineWidth = 0.5;
+      nctx.beginPath();
+      nctx.moveTo(cx - 12, cy); nctx.lineTo(cx + 12, cy);
+      nctx.moveTo(cx, cy - 12); nctx.lineTo(cx, cy + 12);
+      nctx.stroke();
+
+      requestAnimationFrame(drawNetGraph);
+    }
+
+    resizeNetCanvas();
+    drawNetGraph();
+
+    window.addEventListener('resize', resizeNetCanvas);
+  }
+
+
+  // ═══════════════════════════════════════════════════════
   // Mini Canvas Visualizations
   // ═══════════════════════════════════════════════════════
 
