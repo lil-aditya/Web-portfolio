@@ -287,26 +287,23 @@ body::after {
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--fg);
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  margin-bottom: 0.75rem;
 }
 
-.hero-name-first {
-  text-align: left;
+.hero-name-line,
+.hero-name-accent {
+  display: block;
 }
 
 .hero-name-accent {
   color: var(--cyan);
   text-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
-  text-align: right;
 }
 
 .hero-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -318,6 +315,7 @@ body::after {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  padding-top: 0.5rem;
 }
 
 .hero-role {
