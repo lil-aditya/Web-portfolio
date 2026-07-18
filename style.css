@@ -960,7 +960,11 @@ body::after {
 
   .sb-toggle { display: flex; }
 
-  .hero-panel { display: none; }
+  .hero-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right { display: none; }
 
   .hero-name {
     font-size: clamp(3rem, 12vw, 5rem);
